@@ -1,0 +1,215 @@
+# Favorita Store Sales Forecasting Project
+
+## Project Overview
+
+This project focuses on forecasting product sales for Corporación Favorita, a major grocery retailer in Ecuador. The goal of the project is to use historical sales data and related external factors to predict future store-level product sales.
+
+Accurate sales forecasting can help retailers improve inventory planning, reduce stockouts, manage promotions more effectively, and support better business decision-making.
+
+This project was completed as part of a data analytics capstone project and uses machine learning techniques to forecast future sales based on historical patterns and business-related features.
+
+## Business Problem
+
+Retail stores need reliable sales forecasts to make better operational decisions. Poor forecasting can lead to overstocking, understocking, wasted inventory, missed revenue opportunities, and inefficient promotion planning.
+
+The main business question for this project is:
+
+**Can historical sales data, store information, product categories, promotions, holidays, oil prices, and transaction activity be used to accurately forecast future product sales?**
+
+## Dataset
+
+The project uses the Favorita Grocery Sales Forecasting dataset, which includes multiple related tables:
+
+* **Train data**: Historical sales records by date, store, and product family
+* **Test data**: Future records where sales need to be predicted
+* **Stores data**: Store location, type, and cluster information
+* **Oil data**: Daily oil prices
+* **Holiday events data**: National, regional, and local holiday information
+* **Transactions data**: Daily store transaction counts
+
+## Tools and Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* LightGBM
+* Matplotlib
+* Jupyter Notebook
+* Power BI
+* GitHub
+
+## Project Workflow
+
+### 1. Data Loading
+
+Multiple datasets were loaded and reviewed, including sales records, store details, oil prices, holidays, and transaction data. Each dataset was inspected to understand its structure, missing values, and possible relationship to the forecasting target.
+
+### 2. Data Cleaning
+
+The cleaning process included:
+
+* Checking missing values
+* Handling null values in oil price data
+* Reviewing duplicate records
+* Converting date columns into proper datetime format
+* Preparing categorical and numerical features for modeling
+* Merging related datasets into one modeling table
+
+### 3. Feature Engineering
+
+Several new features were created to improve model performance, including:
+
+* Year
+* Month
+* Day
+* Day of week
+* Week of year
+* Promotion indicators
+* Store-related features
+* Product family features
+* Holiday-related features
+* Oil price features
+* Transaction-based features
+
+These features help the model capture seasonality, promotion effects, store differences, and external economic factors.
+
+### 4. Model Development
+
+The main machine learning model used in this project was **LightGBM**.
+
+LightGBM was selected because it performs well on structured tabular datasets, handles large datasets efficiently, and can capture non-linear relationships between features and sales.
+
+The model was trained using historical sales data and then used to generate sales predictions for future records.
+
+### 5. Model Evaluation
+
+The model was evaluated by comparing predicted sales values against actual sales values from the training/validation data.
+
+Evaluation focused on understanding how well the model captured sales trends across:
+
+* Different stores
+* Product families
+* Promotional periods
+* Holiday periods
+* Time-based patterns
+
+### 6. Visualization and Reporting
+
+Power BI was used to create visual reports that explain the business performance and forecasting results.
+
+The dashboard focuses on:
+
+* Sales trends over time
+* Store-level sales performance
+* Product family performance
+* Promotion impact
+* Forecasting results
+* Business insights from the model output
+
+## Key Insights
+
+* Sales are strongly affected by product family, store location, promotions, and seasonal patterns.
+* Promotion activity plays an important role in sales changes.
+* Holiday events can influence customer purchasing behavior.
+* Store-level differences are important and should be included in the forecasting model.
+* LightGBM is a strong model choice for this type of structured retail forecasting problem.
+
+## Project Files
+
+```text
+favorita-store-sales-forecasting/
+│
+├── data/
+│   ├── train.csv
+│   ├── test.csv
+│   ├── stores.csv
+│   ├── oil.csv
+│   ├── holidays_events.csv
+│   └── transactions.csv
+│
+├── notebooks/
+│   └── favorita_sales_forecasting.ipynb
+│
+├── powerbi/
+│   └── favorita_sales_dashboard.pbix
+│
+├── images/
+│   ├── dashboard_overview.png
+│   ├── sales_trend.png
+│   └── forecast_results.png
+│
+├── requirements.txt
+└── README.md
+```
+
+## How to Run This Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/favorita-store-sales-forecasting.git
+```
+
+### 2. Install required Python packages
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Open the notebook
+
+Open the Jupyter Notebook file:
+
+```text
+notebooks/favorita_sales_forecasting.ipynb
+```
+
+Run the notebook step by step to reproduce the data cleaning, feature engineering, modeling, and prediction process.
+
+### 4. Open the Power BI dashboard
+
+Open the `.pbix` file located in the `powerbi/` folder using Power BI Desktop.
+
+## Power BI Report
+
+The Power BI report was created to present the forecasting results in a clear business format. It helps users understand sales trends, compare store performance, analyze product families, and review model-based forecasting results.
+
+The Power BI dashboard is useful because it turns the machine learning results into visual insights that can support business decisions.
+
+## Skills Demonstrated
+
+This project demonstrates the following skills:
+
+* Data cleaning
+* Data preprocessing
+* Exploratory data analysis
+* Feature engineering
+* Time-based feature creation
+* Machine learning modeling
+* Sales forecasting
+* Model evaluation
+* Business intelligence reporting
+* Power BI dashboard design
+* Python programming
+* Data storytelling
+
+## Conclusion
+
+This project shows how machine learning can be used to forecast retail sales and support business decision-making. By combining historical sales data with store information, promotions, holidays, oil prices, and transaction activity, the model can identify important sales patterns and generate useful future sales predictions.
+
+The project also demonstrates how Python and Power BI can work together: Python is used for data preparation and machine learning, while Power BI is used to communicate results through interactive visual reports.
+
+## Future Improvements
+
+Future improvements could include:
+
+* Testing additional forecasting models
+* Improving holiday feature engineering
+* Comparing model performance across different product families
+* Creating a more automated forecasting pipeline
+* Adding more detailed model evaluation metrics
+
+## Author
+
+Cai
